@@ -2,7 +2,7 @@
 
 namespace FSharpx.Collections
 
-open FSharpx.Collections
+//open FSharpx.Collections
 open System.Threading
 
 type Node(thread,array:obj[]) =
@@ -86,7 +86,7 @@ type internal TransientVector<'T> (count,shift:int,root:Node,tail:obj[]) =
                     newRoot.Array.[0] <- root :> obj
                     newRoot.Array.[1] <- this.NewPath(shift,tailNode) :> obj
                     shift <- shift + Literals.blockSizeShift
-                    newRoot
+                    newRoot 
                 else
                     this.PushTail(shift,root,tailNode)
 
